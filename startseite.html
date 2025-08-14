@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spielauswahl</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('dein-bild-url-hier.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-top: 40px;
+      font-size: 3rem;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 60px 20px;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 800px;
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.6);
+      z-index: 0;
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      font-size: 2rem;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      text-shadow: 2px 2px 6px #000;
+      padding: 0 10px;
+    }
+
+    /* Karten mit individuellen Bildern */
+    .fakeorfakt::before { background-image: url('index1.png'); }
+    .zehnvonzehn::before { background-image: url('10von10.png'); }
+    .wop::before { background-image: url('wop.png'); }
+    .imposter::before { background-image: url('imposter.png'); }
+    .wort::before { background-image: url('wort.png'); }
+
+    /* 📱 Mobile Optimierung */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+        margin-top: 20px;
+      }
+
+      .card {
+        height: 200px;
+      }
+
+      .card-content {
+        font-size: 1.2rem;
+      }
+
+      .card-container {
+        gap: 20px;
+        padding: 30px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 Wähle dein Spiel</h1>
+  <div class="card-container">
+    <a href="index.html" class="card fakeorfakt">
+      <div class="card-content">Fake or Fakt 🎭</div>
+    </a>
+    <a href="10von10.html" class="card zehnvonzehn">
+      <div class="card-content">Sie ist eine 10 von 10, aber... 💘</div>
+    </a>
+    <a href="wop.html" class="card wop">
+      <div class="card-content">Wahrheit oder Pflicht 🔥</div>
+    </a>
+    <a href="imposter.html" class="card imposter">
+      <div class="card-content">Finde den Imposter 🕵️‍♂️</div>
+    </a>
+    <a href="wort.html" class="card wort">
+      <div class="card-content">Verbotene Wörter 🚫</div>
+    </a>
+  </div>
+</body>
+</html>
